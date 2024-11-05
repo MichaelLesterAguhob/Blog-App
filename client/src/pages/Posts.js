@@ -76,6 +76,7 @@ export default function Posts() {
             //         </div>
             //     )
             // }))
+            console.log(data)
         } else {
             Swal.fire({
                 title: 'Something went wrong',
