@@ -23,7 +23,7 @@ const postSchema = mongoose.Schema({
         default: Date.now
     },
     comments: [{
-        userID: {
+        userId: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User',
             default: null

@@ -68,13 +68,14 @@ export default function Posts() {
 
         const data = await response.json();
         if(data) {
-            setPosts(data.posts.map(post => {
-                return(
-                    <div>
-                        <h3>post</h3>
-                    </div>
-                )
-            }))
+            // setPosts(data.posts.map(post => {
+            //     return(
+            //         <div>
+            //             {/* <h3>post</h3> */}
+            //             {post}
+            //         </div>
+            //     )
+            // }))
         } else {
             Swal.fire({
                 title: 'Something went wrong',
