@@ -5,7 +5,7 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link, NavLink } from 'react-router-dom';
 
 export default function NavBar() {
-    const {user, setUser} = useContext(UserContext);
+    const {user} = useContext(UserContext);
     const toggler = new useRef(null);
     function closeNavbar() {
         if(toggler.current && window.innerWidth <= 991){
@@ -28,7 +28,7 @@ export default function NavBar() {
                         user._id !== null ?
                         <>
                             <Nav className="mx-auto" >
-                                <Nav.Link onClick={() => closeNavbar()} className='text-light' as={NavLink} to="/movies" exact="true">Movies</Nav.Link>
+                                <Nav.Link onClick={() => closeNavbar()} className='text-light' as={NavLink} to="/" exact="true">POSTS</Nav.Link>
                             </Nav>
                             <Nav>
                                 <Nav.Link onClick={() => closeNavbar()} className='text-light text-center bg-danger rounded' as={NavLink} to="/logout" exact="true">Logout</Nav.Link>

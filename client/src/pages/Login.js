@@ -117,7 +117,7 @@ export default function Login() {
 
     return (
         (user._id !== null) ?
-        <Navigate to={'/movies'} />
+        <Navigate to={'/'} />
         :
         <Container className="mt-5 h-75 d-flex flex-column login-container">
             <h1 className="tagline mt-5 mb-5 mx-auto text-light fw-bolder text-center">Connecting ideas, igniting change. Start here!</h1>

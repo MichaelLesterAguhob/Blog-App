@@ -30,7 +30,7 @@ module.exports.createPost = async (req, res) => {
 module.exports.getAllPosts = async (req, res) => {
     try {
 
-        const response = await Post.find({});
+        const response = await Post.find({}).populate('author.userId').populate('comments.userId');
         
         return res.status(200).send({
             success: true,
@@ -46,7 +46,7 @@ module.exports.getPost = async (req, res) => {
     try {
         const postID = req.params.postId
 
-        const response = await Post.findOne({_id: postID});
+        const response = await Post.findOne({_id: postID}).populate('author.userId').populate('comments.userId');
         
         return res.status(200).send({
             success: true,
