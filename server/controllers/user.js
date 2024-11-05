@@ -42,7 +42,7 @@ module.exports.registerUser = (req, res) => {
     }).catch(err => errorHandler(err, req, res))
 
     
-  };
+};
 
 
 // Authentication
@@ -79,12 +79,4 @@ module.exports.getUserDetails = (req, res) => {
       return res.status(404).send({ message: "User not found"});
     }
   }).catch(err => errorHandler(err, req, res));
-}
-
-module.exports.getAllUsers = async (req, res) => {
-    await User.find({}).then(users => {
-        if(users.length > 0) {
-            res.status(200).send(users)
-        }
-    }).catch(error => console.error(error))
 }

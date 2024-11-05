@@ -23,38 +23,38 @@ function App() {
     }
 
     
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                if(localStorage.getItem('token') !== null) {
-                   const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/users/details`, {
-                        headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
-                    })
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         try {
+    //             if(localStorage.getItem('token') !== null) {
+    //                const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/users/details`, {
+    //                     headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
+    //                 })
                     
-                    if(!response.ok) {
-                        let respo = await response.json();
-                        throw new Error(respo.message || respo.error || "Getting user details failed")
-                    }
+    //                 if(!response.ok) {
+    //                     let respo = await response.json();
+    //                     throw new Error(respo.message || respo.error || "Getting user details failed")
+    //                 }
                     
-                    const data = await response.json();
-                    if(data) {
-                        setUser({
-                            _id: data.user._id, 
-                            isAdmin: data.user.isAdmin
-                        })
-                    }
-                } else {
-                    setUser({
-                        _id: null,
-                        isAdmin: null
-                    })
-                }
-            } catch (error) {
-                console.error(error);
-            }
-        }
-        fetchData();
-    }, [])
+    //                 const data = await response.json();
+    //                 if(data) {
+    //                     setUser({
+    //                         _id: data.user._id, 
+    //                         isAdmin: data.user.isAdmin
+    //                     })
+    //                 }
+    //             } else {
+    //                 setUser({
+    //                     _id: null,
+    //                     isAdmin: null
+    //                 })
+    //             }
+    //         } catch (error) {
+    //             console.error(error);
+    //         }
+    //     }
+    //     fetchData();
+    // }, [])
    
   
     return (

@@ -6,5 +6,5 @@ email: "admin@mail.com"
 pass: "admin123"
 
 ## Normal User Account
-email: michael@gamil.com    
+email: michael@gmail.com    
 pass: "michael123"
