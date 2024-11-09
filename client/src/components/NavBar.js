@@ -23,12 +23,15 @@ export default function NavBar() {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" className="bg-light" ref={toggler}/>
                 <Navbar.Collapse id="basic-navbar-nav">
                    
-
+                    <Nav className="ms-auto" >
+                        <Nav.Link onClick={() => closeNavbar()} className='text-light' as={NavLink} to="/" exact="true">POSTS</Nav.Link>
+                    </Nav>
                     {
                         user._id !== null ?
                         <>
-                            <Nav className="mx-auto" >
-                                <Nav.Link onClick={() => closeNavbar()} className='text-light' as={NavLink} to="/" exact="true">POSTS</Nav.Link>
+                            
+                            <Nav className="me-auto">
+                                <Nav.Link onClick={() => closeNavbar()} className='text-light' as={NavLink} to="/my-posts" exact="true">MY POSTS</Nav.Link>
                             </Nav>
                             <Nav>
                                 <Nav.Link onClick={() => closeNavbar()} className='text-light text-center bg-danger rounded' as={NavLink} to="/logout" exact="true">Logout</Nav.Link>

@@ -14,6 +14,7 @@ import Posts from './pages/Posts';
 
 function App() {
   
+    const [loading, setLoading] = useState(false);
     const [user, setUser] = useState({
         _id: null,
         isAdmin: null
@@ -40,7 +41,7 @@ function App() {
                     const data = await response.json();
                     if(data) {
                         setUser({
-                            _id: data.user._id, 
+                            _id: data.user._id,
                             isAdmin: data.user.isAdmin
                         })
                     }
@@ -52,11 +53,18 @@ function App() {
                 }
             } catch (error) {
                 console.error(error);
+            } finally {
+                setLoading(true);
             }
         }
         fetchData();
     }, [])
    
+    if(!loading) {
+        return (
+            <div>Loading data</div>
+        )
+    }
   
     return (
         <UserProvider value={{user, unsetUser, setUser}}>
