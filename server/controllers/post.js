@@ -132,7 +132,7 @@ module.exports.commentToPost = async (req, res) => {
 module.exports.viewPostComments = async (req, res) => {
     try {
         const postId = req.params.postId;
-        const response = await Post.findOne({_id: postId}).populate('User', 'username');
+        const response = await Post.findOne({_id: postId}).populate('comments.userId', 'username');
         if(!response) {
             return res.status(404).send({
                 success: false,
