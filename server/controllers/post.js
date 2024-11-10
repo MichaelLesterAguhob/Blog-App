@@ -98,9 +98,9 @@ module.exports.updatePost = async (req, res) => {
 module.exports.commentToPost = async (req, res) => {
     try {
         const postID = req.params.postId;
-        const userID = req.user._id;
+        const userID = req.user.id;
         const {comment} =  req.body;
-        
+        return console.log(userID)
         const newComment = {
             userID: userID,
             comment: comment
