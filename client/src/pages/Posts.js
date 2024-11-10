@@ -3,7 +3,7 @@ import { Button, Card, Col, Container, Form, Modal, Row } from "react-bootstrap"
 import UserContext from "../UserContext";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
-import ViewPost from "../components/ViewPost";
+import ViewPost from "../components/ViewPost"
 
 export default function Posts() {
     const {user} = useContext(UserContext);
