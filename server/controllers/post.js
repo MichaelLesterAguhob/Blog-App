@@ -86,6 +86,7 @@ module.exports.updatePost = async (req, res) => {
         const response = await Post.findByIdAndUpdate(postID, updatedPost, {new: true});
         return res.status(200).send({   
             success: true,
+            message: "Successfully Updated Post",
             response
         });
     } catch(error) {
@@ -140,7 +141,7 @@ module.exports.viewPostComments = async (req, res) => {
         }
         return res.status(200).send({
             success: true,
-            posts: response.comments
+            comments: response.comments
         });
     } catch(error) {
         errorHandler(error, req, res);
@@ -155,7 +156,7 @@ module.exports.deletePostByAdmin = async (req, res) => {
         
         return res.status(200).send({
             success: true,
-            message: "Deleted SUccessfully",
+            message: "Deleted Successfully",
             response
         });
     } catch(error) {
