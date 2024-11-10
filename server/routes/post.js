@@ -19,6 +19,6 @@ router.get('/view-post-comments/:postId', postControllers.viewPostComments);//
 
 router.delete('/admin-delete-post/:postId', verify, verifyAdmin, postControllers.deletePostByAdmin);//
 
-router.patch('/admin-delete-comment/:commentId', verify, verifyAdmin, postControllers.deleteCommentByAdmin);
+router.patch('/admin-delete-comment/:commentId', verify, verifyAdmin, postControllers.deleteCommentByAdmin);//
 
 module.exports = router;
