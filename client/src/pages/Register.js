@@ -16,7 +16,7 @@ export default function Register() {
         e.preventDefault();
         
         try {
-            const response = await fetch(`http://localhost:4000/users/register`, {
+            const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/users/register`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -34,12 +34,13 @@ export default function Register() {
     
             const data = await response.json();
             if(data) {
-                if(data.message === "Registered Successfully") {
+                if(data.message === "User registered successfully") {
                     Swal.fire({
                         title: data.message,
                         icon: 'success',
                         timer: 1500,
                     })
+                    setUsername('');
                     setEmail('');
                     setPassword('');
                     setConfirmPass('');

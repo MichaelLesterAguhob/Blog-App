@@ -15,7 +15,7 @@ router.patch('/update-post/:postId', verify, postControllers.updatePost);//
 
 router.patch('/comment-to-post/:postId', verify, postControllers.commentToPost);//
 
-router.get('/view-post-comments/:postId', postControllers.viewPostComments);
+router.get('/view-post-comments/:postId', postControllers.viewPostComments);//
 
 router.delete('/admin-delete-post/:postId', verify, verifyAdmin, postControllers.deletePostByAdmin);//
 

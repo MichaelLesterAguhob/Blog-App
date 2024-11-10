@@ -89,7 +89,15 @@ export default function Posts() {
         }
 
         const data = await response.json();
+  
         if(data) {
+            if(data.posts.length <= 0) {
+                return setPosts(()=> {
+                    return (
+                        <h3 className="mt-5">No posts yet. Be the first to post here!</h3>
+                    )
+                })
+            }
             setPosts(data.posts.map(post => {
                 const date = new Date(post.creationDate);
                 const dateCreated = date.toLocaleDateString();
@@ -125,23 +133,23 @@ export default function Posts() {
                                                 null
                                             }
                                             <Button 
-                                                className="btn btn-primary" 
+                                                className="btn btn-primary bnt-sm" 
                                                 onClick={() => {
                                                     showEditModal(); 
                                                     setSelectedPostID(post._id); 
                                                     setNewTitle(post.title); 
-                                                    setNewContent(post.content)}}>edit
+                                                    setNewContent(post.content)}}>Edit
                                             </Button>
                                             <Button 
-                                                className="btn btn-danger" 
+                                                className="btn btn-danger bnt-sm" 
                                                 onClick={() => {
                                                     deletPost(post._id)
-                                                    }}>delete
+                                                    }}>Delete
                                             </Button> 
                                         </Container>
                                     :
                                         user._id !== null ?
-                                        <ViewPost value={post}/>
+                                        <ViewPost postData={post}/>
                                         :
                                         null
                                 }
@@ -261,9 +269,9 @@ export default function Posts() {
                 <h1 className="text-dark me-5">Posts</h1>
                 {
                     user._id !== null ?
-                    <Button className="btn btn-success ms-5" onClick={() => {showAddModal()}}>Create Post</Button>
+                    <Button className="btn btn-success ms-5 btn-sm" onClick={() => {showAddModal()}}>Create Post</Button>
                     :
-                    <Link className="btn btn-success ms-5" to={'/login'} >Login to Create Post</Link>
+                    <Link className="btn btn-success ms-5 btn-sm" to={'/login'} >Login to Create Post</Link>
                 }
             </Container>
 

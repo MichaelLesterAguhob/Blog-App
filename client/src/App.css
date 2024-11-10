@@ -57,3 +57,36 @@
 .posts-container{
     backdrop-filter: blur(10px);
 }
+
+.comments-container{
+    border: 1px solid lightgray;
+    max-height: 200px;
+    overflow-y: auto;
+    padding-bottom: 10px;
+    min-height: 50px;
+}
+
+.individual-comment {
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    background-color: cornsilk;
+    margin-top: .5rem;
+    padding: 0;
+    padding-left: .5rem;
+}
+
+.comment-content{
+    margin: 0;
+}
+
+.delete-comment{
+    font-size: .7rem;
+    border-radius: 5px;
+    background-color: indianred;
+    color: white;
+    border: none;
+}
+
+.viewModal{
+    padding-bottom: 100px;
+}
