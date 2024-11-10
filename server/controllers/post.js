@@ -100,9 +100,9 @@ module.exports.commentToPost = async (req, res) => {
         const postID = req.params.postId;
         const userID = req.user.id;
         const {comment} =  req.body;
-        return console.log(userID)
+   
         const newComment = {
-            userID: userID,
+            userId: userID,
             comment: comment
         }
 
