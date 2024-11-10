@@ -6,7 +6,7 @@ const cors = require('cors');
 
 const app = express();
 const corsOptions = ({
-    origin: ['https://blog-app-sepia-nine.vercel.app/', 'http://localhost:8000', 'http://localhost:3000'],
+    origin: ['https://blog-app-sepia-nine.vercel.app', 'http://localhost:8000', 'http://localhost:3000'],
     credentials: true,
     optionsSuccessStatus: 200
 })
